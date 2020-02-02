@@ -1,0 +1,12 @@
+<table border="1">
+  <tr *ngFor="let line of boardArray let i = index">
+    <td *ngFor="let cell of line let j = index" (click)="changeLife(i,j)">
+      <span *ngIf='cell === 0' style='color:red; margin-left: 12px'>死</span>
+      <span *ngIf='cell === 1' style='color:green; margin-left: 12px'>生</span>
+    </td>
+  </tr>
+</table>
+<p>
+<button type="button" (click)="nextGeneration()" style="margin-left: 900px;">
+  <font size="5">Next Generation</font>
+</button>
